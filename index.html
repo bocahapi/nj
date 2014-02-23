@@ -1,0 +1,373 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="http://localhost/fa/css/font-awesome.min.css">
+    <style>
+    a{
+        text-decoration: none;
+    }
+    /*
+    Background
+    ----------------*/
+    .clearfix:after {
+        content:".";
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+    body, html, .bginner {
+        padding: 0;
+        margin:0;
+        height: 100%;
+    }
+    .bg, .bg_1, .bg_2, .bg_3 {
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+    }
+    .bg {
+        position: fixed;
+        z-index: -999999;
+    }
+    .bginner {
+        position: relative;
+    }
+    .bg_1, .bg_2, .bg_3 {
+        position: absolute;
+    }
+    .bg_1 {
+        background-color: rgba(163, 147, 147, 0.28);
+        z-index: 2;
+    }
+    .bg_2 {
+        background-color: rgba(218, 218, 218, 0.31);
+        z-index: 1;
+    }
+    .bg_3 {
+        background-color: #8568CF;
+        z-index: 0;
+    }
+    /* 
+     Project css
+     -----------------------------*/
+    .container {
+        width:960px;
+        margin:20px auto;
+    }
+    .col-0, .col-1, .col-2 {
+        float:left;
+        margin: 0 10px;
+    }
+    .col-0 {
+        width: 100%;
+    }
+    .col-1 {
+        width: 20%;
+    }
+    .col-2 {
+        width: 75%;
+    }
+    /* Slider
+    ------------------------ */
+    .sliders {
+        position: relative;
+    }
+    .slider {
+        margin :0;
+        padding: 0;
+        height: 410px;
+        overflow: hidden;
+    }
+    .slider li {
+        list-style: none;
+        overflow: hidden;
+        height: 410px;
+    }
+    .slider li img {
+        width: 100%;
+        height: 100%;
+    }
+    .slider-thumb {
+        position: relative;
+    }
+    .thumb {
+        margin:0;
+        padding: 0
+    }
+    .thumb li {
+        display: table-cell;
+    }
+    .thumb li img {
+        width: 100%;
+        height: 100%;
+    }
+    .caption {
+        display: none;
+        position: absolute;
+        bottom: 113px;
+        padding: 10px;
+        background: rgba(15, 15, 15, 0.46);
+        color: #FFF;
+    }
+    .slider li:hover > .caption {
+        display: block;
+    }
+    /*Left side*/
+    .comments {
+        background: #fff;
+        margin-right: -20px;
+    }
+    .comment {
+        overflow: auto;
+        height: 465px;
+    }
+    .avatar, .avatar-info {
+        float: left;
+    }
+    .comments .author {
+    }
+    .comments .author .avatar {
+        overflow: hidden;
+        height: 48px;
+        padding: 5px;
+    }
+    .comments .author .avatar img {
+        width: 48px;
+    }
+    .avatar-info {
+        font-weight: bold;
+        padding: 5px;
+    }
+    .avatar-info a {
+        text-decoration: none;
+        color: #555;
+    }
+    .buttons {
+        padding: 10px;
+    }
+    .button {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .button li {
+        display: inline-block;
+        margin: 0 10px;
+    }
+    .comment .comment-list {
+        margin: 5px 0;
+        padding: 0;
+        border-top: 1px solid #ccc;
+    }
+    .comment .comment-list li {
+        list-style: none;
+        padding: 5px;
+    }
+    .comment .comment-list li .comment-content {
+        font-size: 13px;
+    }
+    .controller, .controller-thumb {
+        position:absolute;
+        top:35%;
+        width: 100%;
+    }
+    .controller-thumb {
+        top:27%;
+    }
+    .controller .next, .controller .prev, .controller-thumb .next-thumb, .controller-thumb .prev-thumb {
+        position: absolute;
+        padding: 10px;
+        cursor: pointer;
+        background: #7FB3E7;
+    }
+    .controller .next:hover, .controller .prev:hover, .controller-thumb .next-thumb:hover, .controller-thumb .prev-thumb:hover {
+        background: #2c3e50;
+    }
+    .controller .next, .controller-thumb .next-thumb {
+        right: 0;
+    }
+    .controller .prev, .controller-thumb .prev-thumb {
+        left: 0;
+    }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/modernizr.js"></script>
+
+</head>
+
+<body>
+    <div class="container clearfix">
+        <!-- kolom komentar -->
+        <div class="col-1">
+            <div class="comments">
+                <div class="author clearfix">
+                    <div class="avatar">
+                        <img src="images/icon.jpg" alt="">
+                    </div>
+                    <div class="avatar-info">
+                        <div class="name-auhtor">
+                            <a href="#">Mas Wakhid</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comment">
+                    <div class="buttons">
+                        <ul class="button">
+                            <li><a href="#"><i class="fa fa-retweet" title="Share"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-comments" title="Comment"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-cutlery" title="Another"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="comment-list">
+                        <li>
+                            <div class="name-auhtor">
+                                <a href="#">Mas Wakhid</a>
+                            </div>
+                            <div class="comment-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, nam, debitis, mollitia quo quibusdam possimus voluptatum obcaecati vel in beatae ab natus et corporis cum porro voluptatem nisi atque quia.</div>
+                        </li>
+                        <li>
+                            <div class="name-auhtor">
+                                <a href="#">Mas Wakhid</a>
+                            </div>
+                            <div class="comment-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, nam, debitis, mollitia quo quibusdam possimus voluptatum obcaecati vel in beatae ab natus et corporis cum porro voluptatem nisi atque quia.</div>
+                        </li>
+                        <li>
+                            <div class="name-auhtor">
+                                <a href="#">Mas Wakhid</a>
+                            </div>
+                            <div class="comment-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, nam, debitis, mollitia quo quibusdam possimus voluptatum obcaecati vel in beatae ab natus et corporis cum porro voluptatem nisi atque quia.</div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- end kolom komentar -->
+
+        <!-- Slider -->
+        <div class="col-2">
+            <div class="sliders">
+                <ul class="slider">
+                    <li>
+                        <img src="images/mac-960px.png" alt="">
+                        <div class="caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, enim, placeat, recusandae minima quibusdam laborum animi doloribus excepturi ullam labore voluptatibus ab quaerat a nihil sunt error voluptatum perspiciatis suscipit.</div>
+                    </li>
+                    <li>
+                        <img src="images/cloud-960px.png" data="gambar" alt="">
+                        <div class="caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, enim, placeat, recusandae minima quibusdam laborum animi doloribus excepturi ullam labore voluptatibus ab quaerat a nihil sunt error voluptatum perspiciatis suscipit.</div>
+                    </li>
+                    <li>
+                        <img src="images/galaxy-960px.png" alt="">
+                        <div class="caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, enim, placeat, recusandae minima quibusdam laborum animi doloribus excepturi ullam labore voluptatibus ab quaerat a nihil sunt error voluptatum perspiciatis suscipit.</div>
+                    </li>
+                    <li>
+                        <img src="images/cloud-960px.png" alt="">
+                        <div class="caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, enim, placeat, recusandae minima quibusdam laborum animi doloribus excepturi ullam labore voluptatibus ab quaerat a nihil sunt error voluptatum perspiciatis suscipit.</div>
+                    </li>
+
+                </ul>
+                <div class="slider-thumb">
+                    <ul class="thumb">
+                        <li>
+                            <img src="images/mac-180px.png" alt="" data-thumb="images/mac-960px.png">
+                        </li>
+                        <li>
+                            <img src="images/cloud-180px.png" alt="" data-thumb="images/cloud-960px.png">
+                        </li>
+                        <li>
+                            <img src="images/galaxy-180px.png" alt="" data-thumb="images/galaxy-960px.png">
+                        </li>
+                        <li>
+                            <img src="images/cloud-180px.png" alt="" data-thumb="images/cloud-960px.png">
+                        </li>
+                    </ul>
+                    <div class="controller-thumb">
+                        <div class="next-thumb"><i class="fa fa-angle-right fa-2x"></i>
+                        </div>
+                        <div class="prev-thumb"><i class="fa fa-angle-left fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="controller">
+                    <div class="next"><i class="fa fa-angle-right fa-2x"></i>
+                    </div>
+                    <div class="prev"><i class="fa fa-angle-left fa-2x"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+    jQuery(function($) {
+        jQuery('.slider li').hide();
+
+        jQuery('.slider li:first-child').addClass('active').fadeIn('slow');
+        jQuery('.next').click(function() {
+            act = $('.active');
+            wid = act.width();
+            act.animate({
+                    'left': '-' + wid,
+                },
+                400, function() {
+                    $(this).fadeOut();
+                    $(this).removeClass('active');
+                });
+            if (act.next().is('li')) {
+                act.next().fadeIn('slow', function() {
+                    $(this).addClass('active')
+                });
+            } else {
+                jQuery('.slider li:first-child').addClass('active').fadeIn('slow');
+            }
+
+        });
+        jQuery('.prev').click(function() {
+            act = $('.active');
+            wid = act.width();
+            act.animate({
+                    'left': 0,
+                },
+                400, function() {
+                    $(this).fadeOut();
+                    $(this).removeClass('active');
+                });
+            if (act.prev().is('li')) {
+                act.prev().fadeIn('slow', function() {
+                    $(this).addClass('active')
+                });
+            } else {
+                jQuery('.slider li:last-child').addClass('active').fadeIn('slow');
+            }
+        });
+        jQuery('.thumb li img').click(function() {
+            hash = $(this).attr('data-thumb');
+            jQuery('.active').fadeOut('slow', function() {
+                $(this).removeClass('active');
+                jQuery('img[src|="'+hash+'"]').parent('li').addClass('active').fadeIn();
+            });
+        });
+    });
+    </script>
+
+    <!-- Background Flat -->
+    <div class="bg">
+        <div class="bginner">
+            <div class="bg_1"></div>
+            <div class="bg_2"></div>
+            <div class="bg_3"></div>
+        </div>
+    </div>
+</body>
+
+</html>
